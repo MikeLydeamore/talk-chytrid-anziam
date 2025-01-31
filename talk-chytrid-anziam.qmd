@@ -1,0 +1,18 @@
+---
+title: Modelling chytridiomycosis transmission in frogs
+author: "**Michael Lydeamore**, Claire Miller, Anthony Waddle, Lee Berger, Lee Skerratt, Jennifer Flegg, Patricia Campbell"
+date: ""
+editor:
+  render-on-save: true
+toc: true
+format:
+  presentation-revealjs+letterbox: default
+---
+
+```{r}
+#| label: load-packages
+library(knitr)
+library(ggplot2)
+library(dplyr)
+```
+
