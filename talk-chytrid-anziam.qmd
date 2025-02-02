@@ -6,8 +6,11 @@ editor:
   render-on-save: true
 toc: true
 format:
-  presentation-revealjs+letterbox: default
+  presentation-revealjs+letterbox: 
+    toc: false
 ---
+
+## Chytridiomycosis infection
 
 ```{css}
 img.team {
@@ -23,7 +26,7 @@ library(ggplot2)
 library(dplyr)
 ```
 
-# Chytridiomycosis infection
+
 
 ::: columns
 ::: {.column width="50%"}
