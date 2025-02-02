@@ -9,10 +9,189 @@ format:
   presentation-revealjs+letterbox: default
 ---
 
+```{css}
+img.team {
+  border-radius: 50%;
+  object-fit: cover;
+}
+```
+
 ```{r}
 #| label: load-packages
 library(knitr)
 library(ggplot2)
 library(dplyr)
 ```
+
+# Chytridiomycosis infection
+
+::: columns
+::: {.column width="50%"}
+-   Fungal disease caused by *Batrachochytrium dendrobatidis* (Bd)
+-   Bd is a fungus that lives in the gut of animals
+-   Infects frogs, but also humans and other mammals
+-   Causes skin disease in the frogs, which is fatal
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="45%"}
+![](images/chytrid-frog.jpeg){fig-align="center"} [Image: New Scientist]{style="font-size: 50%"}
+:::
+:::
+
+## Natural history
+
+-   Bd fungus does not survive in warm climates (\> 30 degrees)
+-   Warm host climate also reduces lethality
+
+::: fragment
+::: callout-tip
+## Idea
+
+If we can heat frogs, maybe we can reduce the impact of this infection
+:::
+:::
+
+## Experiment setup
+
+-   Frogs separated into two classes: shaded and unshaded (heated)
+-   Artifical refugia placed into each mesocosm (replicate)
+-   Measure infection load and mortality
+
+::: fragment
+![](images/frog-refugia.png){fig-align="center" width="60%"}
+
+[Image: Waddle et. al, Nature 2024]{style="font-size: 50%"}
+:::
+
+## Hypothesis
+
+1.  Do frogs in heated refugia experience a reduction in force of infection compared to non-heated refugia?
+2.  Does prior infection confer an immune response that reduces future susceptibility?
+
+::: fragment
+Test using a stochastic compartmental model, with approximate Bayesian computation
+:::
+
+## Model setup
+
+::: {.columns}
+::: {.column width='50%'}
+![](images/chytrid_model_v6.png){fig-align="center"}
+
+:::
+::: {.column width='50%'}
+
+::: {.fragment}
+$$\lambda_h(t) = \beta_h \sum_{k=\{U,V\}}\sum_{j=1}^3 m_{k,j}I_{k,j},$$
+
+* $m_{k,j}$ = Relative infectiousness of frog to $I_{U,3}$
+* $I_{k,j}$ = Infection stage of frog
+
+:::
+:::
+:::
+
+## Parameters to estimate
+
+::: {.columns}
+::: {.column width='50%'}
+
+| Parameter                                | Value          |
+|------------------------------------------|----------------|
+| $\beta_{SH}, \beta_{UN}, \alpha, \omega$ | fitted         |
+| $\mu$                                    | 0.021          |
+| $\gamma_1$                               | 1/2.5 per week |
+| $\gamma_2$                               | 1/4.5 per week |
+
+:::
+::: {.column width='50%'}
+
+| Parameter                                | Value          |
+|------------------------------------------|----------------|
+| $m_{U,1}$                                | 10             |
+| $m_{U,2}$                                | 100            |
+| $m_{V,1}$                                | 1              |
+| $m_{V,2}$                                | 10             |
+| $m_{V,3}$                                | 0.1            |
+
+
+:::
+:::
+
+
+
+## Data
+
+* 8 mesocosms, 4 shaded 4 unshaded
+* 5 frogs per mesocosm
+* Some frogs experienced prior infection
+* Frogs observed at $t=1, 2, 4, 6, 8, 10, 15$ weeks only
+* Frogs that couldn't be found presumed dead
+
+::: {.fragment}
+::: {.callout-caution}
+For more data information, ask Claire Miller and/or read Waddle et. al _Hotspot shelters stimulate frog resistance to chytridiomycosis_.
+:::
+:::
+
+## Results
+
+| Parameter               | Prior          | Posterior (Mean, 95% CI)     |
+|--------------|----------------|------------------------------|
+| $\beta_\text{sh}$       | $\sim U(0,2)$  | 0.675 (0.025, 1.876)         |
+| $\beta_\text{un}$       | $\sim U(0,2)$  | 0.401 (0.008, 1.767)         |
+| $\alpha$                | $\sim U(0,0.5)$| 0.072 (0.003, 0.373)         |
+| **$\alpha\beta_\text{sh}$** |                | **0.018** (0.001, 0.061)         |
+| **$\alpha\beta_\text{un}$** |                | **0.009** (0.000, 0.031)         |
+| $\omega$                | $\sim U(0,2)$  | 0.569 (0.122, 1.688)         |
+
+## Posterior distributions
+
+![](figures/exp_distributions.png){fig-align="center"}
+
+## Predicted trajectories
+
+![](figures/exp_example_trajectories.png){fig-align="center"}
+
+## Summary {.incremental}
+
+* Heating of artifical refugia can reduce infection by almost 50%
+* Prior infection highly protective (approx 97%)
+
+* Small numbers of frogs
+* Limited observation frequency
+* ABC-rejection not the most refined algorithm
+
+## Team
+
+::: {layout-nrow=1 style="text-align: center;"}
+
+![Claire Miller](images/cmiller.jpeg){.team style="border-radius:50%"}
+
+![Patricia Campbell](images/tcampbell.jpg){.team height=180px}
+
+![Jennifer Flegg](images/jflegg.jpeg){.team height=180px width=180px}
+
+:::
+
+::: {style="font-size: 70%"}
+
+#### Experimental paper
+
+Waddle et. al, Hotspot shelters stimulate frog resistance to chytridiomycosis _Nature_ 2024
+
+#### Code availability
+
+* Estimation code: [https://github.com/clairemiller/chytrid_model](https://github.com/clairemiller/chytrid_model)
+* Slides: [https://slides.michaellydeamore.com/talk-chytrid-anziam](https://slides.michaellydeamore.com/talk-chytrid-anziam)
+
+:::
+
+
+## Simulation-estimation experiment
+
+![](figures/syn_distributions.png){fig-align="center"}
 
