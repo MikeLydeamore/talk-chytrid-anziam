@@ -186,7 +186,7 @@ Waddle et. al, Hotspot shelters stimulate frog resistance to chytridiomycosis _N
 #### Code availability
 
 * Estimation code: [https://github.com/clairemiller/chytrid_model](https://github.com/clairemiller/chytrid_model)
-* Slides: [https://slides.michaellydeamore.com/talk-chytrid-anziam](https://slides.michaellydeamore.com/talk-chytrid-anziam)
+* Slides: [https://slides.michaellydeamore.com/chytrid-anziam](https://slides.michaellydeamore.com/chytrid-anziam)
 
 :::
 
