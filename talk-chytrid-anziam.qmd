@@ -32,7 +32,7 @@ library(dplyr)
 ::: {.column width="50%"}
 -   Fungal disease caused by *Batrachochytrium dendrobatidis* (Bd)
 -   Bd is a fungus that lives in the gut of animals
--   Infects frogs, but also humans and other mammals
+-   Infects frogs, and has caused decline in over 500 amphibian species
 -   Causes skin disease in the frogs, which is fatal
 :::
 
