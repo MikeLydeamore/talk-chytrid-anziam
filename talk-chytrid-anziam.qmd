@@ -104,7 +104,7 @@ $$\lambda_h(t) = \beta_h \sum_{k=\{U,V\}}\sum_{j=1}^3 m_{k,j}I_{k,j},$$
 
 | Parameter                                | Value          |
 |------------------------------------------|----------------|
-| $\beta_{SH}, \beta_{UN}, \alpha, \omega$ | fitted         |
+| $\beta_{\text{sh}}, \beta_{\text{un}}, \alpha, \omega$ | fitted         |
 | $\mu$                                    | 0.021          |
 | $\gamma_1$                               | 1/2.5 per week |
 | $\gamma_2$                               | 1/4.5 per week |
@@ -129,7 +129,7 @@ $$\lambda_h(t) = \beta_h \sum_{k=\{U,V\}}\sum_{j=1}^3 m_{k,j}I_{k,j},$$
 ## Data
 
 * 8 mesocosms, 4 shaded 4 unshaded
-* 5 frogs per mesocosm
+* 10 frogs per mesocosm, 5 vaccinated, 5 unvaccinated
 * Some frogs experienced prior infection
 * Frogs observed at $t=1, 2, 4, 6, 8, 10, 15$ weeks only
 * Frogs that couldn't be found presumed dead
