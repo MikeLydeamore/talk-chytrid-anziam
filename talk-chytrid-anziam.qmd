@@ -129,7 +129,7 @@ $$\lambda_h(t) = \beta_h \sum_{k=\{U,V\}}\sum_{j=1}^3 m_{k,j}I_{k,j},$$
 ## Data
 
 * 8 mesocosms, 4 shaded 4 unshaded
-* 10 frogs per mesocosm, 5 vaccinated, 5 unvaccinated
+* 20 frogs per mesocosm, 10 vaccinated, 10 unvaccinated, half infected at $t_0$
 * Some frogs experienced prior infection
 * Frogs observed at $t=1, 2, 4, 6, 8, 10, 15$ weeks only
 * Frogs that couldn't be found presumed dead
