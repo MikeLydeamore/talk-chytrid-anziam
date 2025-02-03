@@ -172,7 +172,7 @@ For more data information, ask Claire Miller and/or read Waddle et. al _Hotspot 
 
 ::: {layout-nrow=1 style="text-align: center;"}
 
-![Claire Miller](images/cmiller.jpeg){.team style="border-radius:50%"}
+![Claire Miller](images/cmiller.png){.team style="border-radius:50%"}
 
 ![Patricia Campbell](images/tcampbell.jpg){.team height=180px}
 
